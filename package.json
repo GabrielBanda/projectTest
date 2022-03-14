@@ -1,0 +1,27 @@
+{
+  "name": "projecttest",
+  "private": true,
+  "version": "0.0.0",
+  "files": ["dist"],
+  "main": "./dist/assets/scripts.min.js",
+  "module": "./dist/assets/scripts.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/assets/scripts.min.js",
+      "require": "./dist/assets/scripts.min.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "rollup": "^2.70.0",
+    "sass": "^1.49.9",
+    "vite": "^2.8.6"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^2.2.4"
+  }
+}

@@ -1,0 +1,87 @@
+Pasos para minificar los archivos usando un proyecto de vite usando vanilla js
+
+
+*** Archivos a minificar: js y css ****
+
+Links de apoyo:
+
+-1.0 https://vitejs.dev/guide/build.html#library-mode
+-2.0 https://stackoverflow.com/questions/68992086/vite-production-style-css-assigne-file-name
+
+Scripts de configuracion
+
+/*
+Notas:
+
+-vite.config.js se crea desde las carpetas de windows, debido a que en vscode no deja crearlo
+-src/main.js se encarga de llamar a los archivos de sass, css, js que se tengan
+-- todo lo que este dentro de build se minifica
+-- npm run build para minificar
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+- 1.0 codifgo
+
+const path = require('path')
+const { defineConfig } = require('vite')
+
+module.exports = defineConfig({
+  build: {
+    manifest: true,
+    lib: {
+      entry: path.resolve(__dirname, 'src/js/main.js'),
+      name: 'MyLib',
+      fileName: (format) => `assets/my-lib.min.js`
+    },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['vue'],
+      output: {
+        // 2.0 Se agrega Script
+        /*
+            code...
+        */
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: 'Vue'
+        }
+      }
+    }
+  }
+})
+
+
+
+/*ESTRUCTURA DE CARPERTAS /
+
+    /dist/assets/(archivos)
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

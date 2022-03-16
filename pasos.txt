@@ -1,6 +1,14 @@
 Pasos para minificar los archivos usando un proyecto de vite usando vanilla js
 
 
+Crear el proyecto:
+npm create vite@latest projectTest
+packagename: projectTest
+seleccionamos: vanilla
+npm run dev --correr proyecto
+
+
+
 *** Archivos a minificar: js y css ****
 
 Links de apoyo:
